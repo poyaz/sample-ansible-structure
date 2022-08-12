@@ -1,0 +1,23 @@
+---
+
+- hosts: "{{ host }}"
+  gather_facts: no
+
+  vars:
+    in_my_var: ""
+
+  pre_tasks:
+    - name: "Check variable 'in_my_var' is not defined"
+      fail:
+        msg: "Please fill variable 'in_my_var'"
+      when:
+        - in_my_var == ""
+
+  roles:
+    - role: common-install
+      tags:
+        - common-install
+
+    - role: sample-task
+      vars:
+        same_task_var: "{{ in_my_var }}"
