@@ -1,0 +1,21 @@
+version: "2.3"
+services:
+  ssh-debian-10:
+    build:
+      context: $PWD/docker/images/ssh-debian-10
+    container_name: sample-ansible-debian-10
+    env_file:
+      - $PWD/docker/env/ssh/.env
+    ports:
+      - 127.0.0.1:${ANSIBLE_DEBIAN_10_SSH_PORT:-4440}:22
+    restart: "no"
+
+  ssh-debian-11:
+    build:
+      context: $PWD/docker/images/ssh-debian-11
+    container_name: sample-ansible-debian-11
+    env_file:
+      - $PWD/docker/env/ssh/.env
+    ports:
+      - 127.0.0.1:${ANSIBLE_DEBIAN_11_SSH_PORT:-4441}:22
+    restart: "no"
