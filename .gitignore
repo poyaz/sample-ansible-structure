@@ -3,6 +3,11 @@
 ### My custom file
 .tests
 
+docker/custom/*
+!docker/custom/.gitkeep
+
+.env
+
 ### Project template
 storage/temp/*
 !storage/temp/.gitkeep
