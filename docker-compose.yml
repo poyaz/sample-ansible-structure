@@ -9,3 +9,4 @@ services:
     tty: true
     network_mode: host
     command: /bin/sh
+    restart: "no"
