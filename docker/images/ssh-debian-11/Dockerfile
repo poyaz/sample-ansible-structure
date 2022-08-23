@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM node:18.7.0-bullseye-slim
 
 RUN set -eux; \
 	apt-get update; \

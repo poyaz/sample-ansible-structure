@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM node:18.7.0-buster-slim
 
 RUN set -eux; \
 	apt-get update; \
