@@ -8,12 +8,13 @@ RUN set -eux; \
         dirmngr \
 	    ca-certificates \
 	    openssh-server \
+	    python3 \
 	; \
 	groupadd --gid 1000 ansible; \
     useradd --uid 1000 -g ansible --home-dir /home/ansible --shell /bin/bash ansible; \
     usermod -aG sudo ansible; \
     mkdir -p /home/ansible/.ssh; \
-    chown -R ansible:ansible /home/ansible/.ssh; \
+    chown -R ansible:ansible /home/ansible/; \
     chmod -R 700 /home/ansible/.ssh; \
     \
     mkdir -p /root/.ssh; \
